@@ -37,16 +37,7 @@ This API provides endpoints for:
    npm install
    ```
 
-3. **Configure environment variables:**
-   ```bash
-   cat > .env << EOF
-   DATABASE_URL="postgresql://prisma:prisma@localhost:5432/titanbay"
-   PORT=3000
-   NODE_ENV=development
-   EOF
-   ```
-
-   Ensure PostgreSQL is running and the database exists:
+3. **Ensure PostgreSQL is running and the database exists:**
    ```bash
    createdb titanbay
    ```

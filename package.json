@@ -4,7 +4,7 @@
   "description": "Titanbay Private Markets API",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn src/server.ts",
+    "dev": "npm run build && /usr/local/opt/node@22/bin/node dist/server.js",
     "build": "tsc",
     "start": "node dist/server.js",
     "migrate": "prisma migrate dev",

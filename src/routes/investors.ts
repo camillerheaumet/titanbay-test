@@ -13,12 +13,12 @@ router.get('/', async (req: Request, res: Response<Investor[]>, next: NextFuncti
       orderBy: { created_at: 'desc' },
     });
 
-    const formatted: Investor[] = investors.map((investor: Investor) => ({
+    const formatted = investors.map((investor: Exclude<typeof investors[number], never>) => ({
       id: investor.id,
       name: investor.name,
       investor_type: investor.investor_type,
       email: investor.email,
-      created_at: investor.created_at.toString(),
+      created_at: investor.created_at.toISOString(),
     }));
 
     res.json(formatted);

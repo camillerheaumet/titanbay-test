@@ -14,7 +14,7 @@ router.get('/', async (req: Request, res: Response<Fund[]>, next: NextFunction) 
       orderBy: { created_at: 'desc' },
     });
 
-    const formattedFunds: Fund[] = funds.map((fund: Fund) => ({
+    const formattedFunds = funds.map((fund: Exclude<typeof funds[number], never>) => ({
       id: fund.id,
       name: fund.name,
       vintage_year: fund.vintage_year,

@@ -29,7 +29,7 @@ router.get('/:fund_id/investments', async (req: Request, res: Response<Investmen
       orderBy: { investment_date: 'desc' },
     });
 
-    const formatted: Investment[] = investments.map((inv: Investment) => ({
+    const formatted = investments.map((inv: Exclude<typeof investments[number], never>) => ({
       id: inv.id,
       investor_id: inv.investor_id,
       fund_id: inv.fund_id,
